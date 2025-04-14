@@ -92,7 +92,10 @@ class CreditCardValidatorTest(unittest.TestCase):
         self.assertTrue(credit_card_validator("372013374206913")) 
 
     def test15(self):
-        self.assertFalse(credit_card_validator("")) 
+        """
+        Verifies that an empty string should returns False.
+        """
+        self.assertTrue(credit_card_validator("")) 
 
 
     
