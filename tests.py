@@ -139,13 +139,13 @@ class CreditCardValidatorTest(unittest.TestCase):
             """
             Verifies if Amex Cards with valid prefix (34) valid length but invalid check bits return False .
             """
-            self.assertTrue(credit_card_validator("342013374206698"))  
+            self.assertFalse(credit_card_validator("342013374206698"))  
 
     def test71(self):
             """
             Verifies if Amex Cards with valid prefix (37) valid length but invalid check bits return False .
             """
-            self.assertTrue(credit_card_validator("372013374206698"))  
+            self.assertFalse(credit_card_validator("372013374206698"))  
     
     
 
