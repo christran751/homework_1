@@ -72,6 +72,18 @@ class CreditCardValidatorTest(unittest.TestCase):
         Verifies if Master Cards with valid prefix (2221-2720) valid length and valid check bits passes .
         """
         self.assertTrue(credit_card_validator("2720133742069168"))  
+    
+    def test12(self):
+        """
+        Verifies if Visa Cards with valid prefix valid length and valid check bits passes .
+        """
+        self.assertTrue(credit_card_validator("4720133742069164"))  
+
+    def test13(self):
+        """
+        Verifies if Amex Cards with valid prefix valid length and valid check bits passes .
+        """
+        self.assertTrue(credit_card_validator("372013374206913"))  
 
     
 if __name__ == '__main__':
