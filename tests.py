@@ -144,6 +144,14 @@ class CreditCardValidatorTest(unittest.TestCase):
             """
             self.assertFalse(credit_card_validator("ohmygodwtf")) 
 
+    def test107(self):
+            """
+            Visa            
+            """
+            self.assertFalse(credit_card_validator("4"))   
+
+
+
         
 if __name__ == '__main__':
     unittest.main()
