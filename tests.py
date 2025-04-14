@@ -201,9 +201,9 @@ class CreditCardValidatorTest(unittest.TestCase):
 
     def test30(self):
         """
-        Verifies if Visa Cards with valid prefix and valid length but has non numerical words within it will return False.
+        Verifies if Visa Cards with valid prefix, valid length, and valid check bit but has non a numerical words within it will return False.
         """
-        self.assertFalse(credit_card_validator("4157626t83156623")) 
+        self.assertFalse(credit_card_validator("4000006T00000034")) 
 
 
 
