@@ -4,33 +4,43 @@ from credit_card_validator import credit_card_validator
 
 class CreditCardValidatorTest(unittest.TestCase):
 
-    def test_valid_master(self):
+    def test1(self):
         """
-        Verifies if it is a valid Master Cards with valid lengths and valid prefix
-        Passes if the credit card number is a valid Mastercard
+        Verifies if Master Cards with valid lengths and valid prefix but an invalid check bits returns False .
         """
-        self.assertFalse(credit_card_validator("5412 7512 3412 3456"))
+        self.assertFalse(credit_card_validator("5105 1051 0510 6901"))  
     
-    def test_valid_visa(self):
+    def test2(self):
         """
-        Verifies if it is a valid Visa with valid lengths and valid prefix
-        Passes if the credit card number is a valid Visa
+        Verifies if Master Cards with valid prefix and check bits but invalid length returns False .
         """
-        self.assertFalse(credit_card_validator("4111 1111 1111 1111"))
+        self.assertFalse(credit_card_validator("5105 1051 0510 69"))  
 
-    def test_valid_amex(self):
+
+    def test3(self):
         """
-        Verifies if it is a valid Amex with valid lengths and valid prefix
-        Passes if the credit card number is a valid Amex        
+        Verifies if Visa cards with valid length and prefix but with invalid check bits returns False.
         """
-        self.assertFalse(credit_card_validator("3482 822463 10005"))
+        self.assertFalse(credit_card_validator("4111 1111 1111 6900"))    
+
+    def test4(self):
+        """
+        Verifies if Visa cards with valid prefix and valid check bits but invalid length returns False.
+        """
+        self.assertFalse(credit_card_validator("4111 1111 1111 690"))  
+
+    def test5(self):
+        """
+        Verifies if Amex cards with valid prefix and length but invalid check bits returns False.
+        """
+        self.assertFalse(credit_card_validator("3411 1111 1111 169"))  
     
-    def test_random_number(self):
+    def test6(self):
         """
-        Verifis that a random number (e.g., 1234 5678 9999) 
-        should not be a valid card
+        Verifies if Amex cards with valid prefix and check bits but invalid length returns False.
         """
-        self.assertFalse(credit_card_validator("1234 5678 9999 8924"))
+        self.assertFalse(credit_card_validator("3411 1111 1111 690"))  
+
     
 if __name__ == '__main__':
     unittest.main()
