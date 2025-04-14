@@ -204,7 +204,7 @@ class CreditCardValidatorTest(unittest.TestCase):
         Verifies if Visa Cards with valid prefix, valid length, and valid check bit but has dash character within it will return False.
         This may cause an issue because int() function accepts negative numbers
         """
-        self.assertFalse(credit_card_validator("4000006-00000034")) 
+        self.assertFalse(credit_card_validator("4000006+00000034")) 
 
 
 
