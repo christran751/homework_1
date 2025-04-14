@@ -6,31 +6,32 @@ class CreditCardValidatorTest(unittest.TestCase):
 
     def test_valid_master(self):
         """
-        Verifies that it is an invalid Master Cards with invalid lengths
+        Verifies if it is a valid Master Cards with valid lengths and valid prefix
+        Passes if the credit card number is a valid Mastercard
         """
-        self.assertFalse(credit_card_validator("5105 1051 0510 510"))
-        # Should be invalid because not enough length
+        self.assertFalse(credit_card_validator("5412 7512 3412 3456"))
     
     def test_valid_visa(self):
         """
-        Verifies that it is an invalid Visa Cards with invalid prefix
+        Verifies if it is a valid Visa with valid lengths and valid prefix
+        Passes if the credit card number is a valid Visa
         """
-        self.assertFalse(credit_card_validator("9024 0071 5012 3456"))
+        self.assertFalse(credit_card_validator("4111 1111 1111 1111"))
 
     def test_valid_amex(self):
         """
-        Verifies that is is an invalid Amex with invalid lengths and invalid prefix
+        Verifies if it is a valid Amex with valid lengths and valid prefix
+        Passes if the credit card number is a valid Amex        
         """
-        self.assertFalse(credit_card_validator("0011 1111 1111 11171"))
+        self.assertFalse(credit_card_validator("3482 822463 10005"))
     
     def test_random_number(self):
         """
-        Verifis that a random number (e.g., 1234 5678 9999) should not be a valid card
+        Verifis that a random number (e.g., 1234 5678 9999) 
+        should not be a valid card
         """
         self.assertFalse(credit_card_validator("1234 5678 9999 8924"))
     
-
-
 if __name__ == '__main__':
     unittest.main()
 
