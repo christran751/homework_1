@@ -116,7 +116,7 @@ class CreditCardValidatorTest(unittest.TestCase):
             """
             Verifies if Visa Cards with valid prefix valid length and valid check bits passes .
             """
-            self.assertTrue(credit_card_validator("4111111111111129"))  
+            self.assertTrue(credit_card_validator("4157626283156623"))  
 
     def test13(self):
             """
