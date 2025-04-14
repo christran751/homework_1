@@ -59,7 +59,7 @@ class CreditCardValidatorTest(unittest.TestCase):
         """
         Verifies if Master Cards with valid prefix (51-55) valid length and valid check bits passes .
         """
-        self.assertFalse(credit_card_validator("5105105105695100"))  
+        self.assertTrue(credit_card_validator("5105105105695100"))  
 
     
 if __name__ == '__main__':
