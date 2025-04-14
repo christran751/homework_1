@@ -95,7 +95,7 @@ class CreditCardValidatorTest(unittest.TestCase):
         """
         Verifies that an empty string should returns False.
         """
-        self.assertTrue(credit_card_validator("")) 
+        self.assertFalse(credit_card_validator("")) 
 
 
     
