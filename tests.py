@@ -204,8 +204,16 @@ class CreditCardValidatorTest(unittest.TestCase):
         Verifies if Visa Cards with valid prefix, valid length, and valid check bit but has a leading dash character will return False.
         This may cause an issue because int() function accepts negative numbers
         """
-        self.assertFalse(credit_card_validator("-400000600000000")) 
+        self.assertFalse(credit_card_validator(400000600000000)) 
 
+
+    def test31(self):
+        """
+        Check to see if the following numbers are Luhn valid. Should pass since the provided number is Luhn valid
+        Using the provided Luhn Number Checker to generated so valid Lunh numbers.
+        """
+        self.assertTrue(credit_card_validator("4516400526736591")) 
+        
 
 
         
