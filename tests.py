@@ -201,10 +201,10 @@ class CreditCardValidatorTest(unittest.TestCase):
 
     def test30(self):
         """
-        Verifies if Visa Cards with valid prefix, valid length, and valid check bit but has a leading dash character will return False.
+        Verifies if Visa Cards with valid prefix, valid length, and valid check bit but is not in the format of a string will return False.
         This may cause an issue because int() function accepts negative numbers
         """
-        self.assertFalse(credit_card_validator(400000600000000)) 
+        self.assertFalse(credit_card_validator(4400000600000002)) 
 
 
     def test31(self):
