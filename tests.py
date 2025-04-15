@@ -95,11 +95,16 @@ class CreditCardValidatorTest(unittest.TestCase):
     def test14(self):
             """
             Verifies if Visa cards with valid prefix and valid check bits but invalid length returns False.
-            Checking to see if Visa Card with corret prefix and valid Luhn but incorrect Length will return False
+            Checking to see if Visa Card with corret prefix and valid Luhn but Length size that is to small will return False
             """
             self.assertFalse(credit_card_validator("42"))  
-            # This return True when it should be false; indicating that something is wrong. Perhaps doesn't check for the length
-            # Perhaps it only checks for prefix and luhn
+
+    def test14_2(self):
+            """
+            Verifies if Visa cards with valid prefix and valid check bits but invalid length returns False.
+            Checking to see if Visa Card with corret prefix and valid Luhn but Length that is to large will return False
+            """
+            self.assertFalse(credit_card_validator("4141212121211112121212121212121222121211212112127"))  
 
     
     def test15(self):
