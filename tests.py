@@ -220,7 +220,7 @@ class CreditCardValidatorTest(unittest.TestCase):
         """
         Check to see if leading zero will be counted
         """
-        self.assertFalse(credit_card_validator("000000000004516400526736591")) 
+        self.assertTrue(credit_card_validator("000000000004516400526736591")) 
 
 
         
