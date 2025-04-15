@@ -211,8 +211,9 @@ class CreditCardValidatorTest(unittest.TestCase):
         """
         Check to see if the following numbers are Luhn valid. Should pass since the provided number is Luhn valid
         Using the provided Luhn Number Checker to generated so valid Lunh numbers.
+        If it fails then it means something is wrong with the Luhn algorithm
         """
-        self.assertTrue(credit_card_validator("4516400526736591")) 
+        self.assertTrue(credit_card_validator("4516400526736590")) 
         
 
 
