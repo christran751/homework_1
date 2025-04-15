@@ -213,8 +213,14 @@ class CreditCardValidatorTest(unittest.TestCase):
         Using the provided Luhn Number Checker to generated so valid Lunh numbers.
         If it fails then it means something is wrong with the Luhn algorithm
         """
-        self.assertTrue(credit_card_validator("4516400526736590")) 
-        
+        self.assertTrue(credit_card_validator("4516400526736591")) 
+
+
+    def test32(self):
+        """
+        Check to see if leading zero will be counted
+        """
+        self.assertFalse(credit_card_validator("000000000004516400526736591")) 
 
 
         
