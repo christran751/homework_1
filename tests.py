@@ -111,9 +111,9 @@ class CreditCardValidatorTest(unittest.TestCase):
 
     def test16(self):
         """
-        Verifies that Amex with invalid prefix (1 less than 34) and invalid length but valid Luhn will return False
+        Verifies that Amex with invalid prefix (1 less than 34) and Luhn but valid length will return False
         """
-        self.assertFalse(credit_card_validator("33714548600153486"))
+        self.assertFalse(credit_card_validator("337145486001537"))
 
     
     # def test17(self):
