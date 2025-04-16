@@ -102,6 +102,12 @@ class CreditCardValidatorTest(unittest.TestCase):
 
         """
         self.assertFalse(credit_card_validator("55714548600500689")) 
+    
+    def test15(self):
+        """
+        Verifies that an empty stirng should return False
+        """
+        self.assertFalse(credit_card_validator(""))
 
 
 # class CreditCardValidatorTest(unittest.TestCase):
