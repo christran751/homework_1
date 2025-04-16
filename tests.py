@@ -7,7 +7,8 @@ class CreditCardValidatorTest(unittest.TestCase):
 
     #####  Notes ######
     """
-    Master for prefix 2221-2720 does not care about length. Will pass as valid master if it passes both  prefix and check bit
+    For Master, will pass as valid if it passes both prefix and check bit
+    Or if it pass both length and prefix
     
     """
 
@@ -50,7 +51,7 @@ class CreditCardValidatorTest(unittest.TestCase):
             """
             Verifies if Master Cards with valid prefix (51-55) valid length and valid check bits passes .
             """
-            self.assertFalse(credit_card_validator("5125135145695121"))  
+            self.assertFalse(credit_card_validator("5125135145695120"))  
         
     def test7(self):
             """
