@@ -43,7 +43,7 @@ class CreditCardValidatorTest(unittest.TestCase):
         Test boundary 3
         With correct length and Luhn
         """
-        self.assertFalse(credit_card_validator("3745645279873448")) 
+        self.assertFalse(credit_card_validator("3045645279873445")) 
 
     def test7(self):
         """
@@ -51,7 +51,7 @@ class CreditCardValidatorTest(unittest.TestCase):
         Test boundary 5
         With correct length and Luhn
         """
-        self.assertFalse(credit_card_validator("5555420789351259")) 
+        self.assertFalse(credit_card_validator("5000420789351250")) 
 
 
 
