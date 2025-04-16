@@ -50,6 +50,13 @@ class CreditCardValidatorTest(unittest.TestCase):
         """
         self.assertFalse(credit_card_validator("400042078935125489282528")) 
 
+    def test8(self):
+        """
+        Verifies if Visa with valid prefix and incorrect Luhn but a invalid length that is not equal to 16.
+
+        """
+        self.assertFalse(credit_card_validator("4000420555213448123122313216")) 
+
     # So for VISA, it seems like if the prefix and Luhn is correct, then it will count as a valid VISA; and it does not count length. Or length must be less than 16
 
 
