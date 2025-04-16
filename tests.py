@@ -50,17 +50,12 @@ class CreditCardValidatorTest(unittest.TestCase):
         """
         self.assertFalse(credit_card_validator("400042078935125489282528")) 
 
-    def test8(self):
-        """
-        Verifies that Visa with invalid prefix (below prefix of 4 - boundary issue) but valid length and valid Luhn will return False
-        """
-        self.assertFalse(credit_card_validator("3060892456200022"))   #3778924562000260
 
     def test8_1(self):
         """
         Verifies that Visa with invalid prefix (below prefix of 4 - boundary issue) and valid luhn but invalid length will return False
         """
-        self.assertTrue(credit_card_validator("3668924562000263")) 
+        self.assertFalse(credit_card_validator("3668924562000263")) 
 
 
 
@@ -77,61 +72,60 @@ class CreditCardValidatorTest(unittest.TestCase):
 
     def test10(self):
         """
-        Verifies if card that does not match any known prefix, but with a valid Luhn, and a valid length that matches the requirment of a AMEX return False.
-
-        """
-        self.assertFalse(credit_card_validator("123456789101116")) 
-
-    def test11(self):
-        """
         Verifies if Master Card with valid prefix (2221 through 2720) and a valid Luhn but an invalid length  return False.
 
         """
         self.assertFalse(credit_card_validator("223456789101115")) 
     
-    def test12(self):
+    def test11(self):
         """
         Verifies if Master Card with valid prefix (2221 through 2720) and a valid length but an invalid Luhn  return False.
 
         """
         self.assertFalse(credit_card_validator("2234567891011153")) 
 
-    def test13(self):
+    def test12(self):
         """
         Verifies if Master Card with valid prefix (51 through 55) and a valid length but an invalid Luhn return False.
 
         """
         self.assertFalse(credit_card_validator("5566742475740355")) 
 
-    def test14(self):
+    def test13(self):
         """
         Verifies if Master Card with valid prefix (51 through 55) and a valid Luhn but an invalid length return False.
 
         """
         self.assertFalse(credit_card_validator("55714548600500689")) 
     
-    def test15(self):
+    def test14(self):
         """
         Verifies that an empty stirng should return False
         """
         self.assertFalse(credit_card_validator(""))
 
-    def test16(self):
+    def test15(self):
         """
         Verifies that Amex with invalid prefix (1 less than 34) and Luhn but valid length will return False
         """
         self.assertFalse(credit_card_validator("337145486001537"))
+    
+    def test16(self):
+        """
+        Verifies that Amex with valid prefix (37) and valid Luhn but invalid length will return False
+        """
+        self.assertFalse(credit_card_validator("3778924562000260"))   
+    
+    ## Testing out of bound
+    # VISA 3, 5 
+
+    def test17(self):
+        """
+        Out of bound prefix by 1 for VISA with correct length and luhn
+        """
+        self.assertFalse(credit_card_validator("3333333333333331"))
 
 
-
-    # def test18(self):
-    #     """
-    #     Because a valid Amex number did not pass as True, and
-    #     Verifies that a card with an invalid prefix and an invalid length and but valid Luhn will return False
-    #     """
-    #     self.assertFalse(credit_card_validator("1230"))
-
-    # For AMEX it seems like the incorrect prefix is used and only requirment for something to be ammex is it matches the length
         
 if __name__ == '__main__':
     unittest.main()
