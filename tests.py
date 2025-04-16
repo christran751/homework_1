@@ -112,14 +112,20 @@ class CreditCardValidatorTest(unittest.TestCase):
     
     def test16(self):
         """
-        Verifies that Amex with valid prefix (37) and valid Luhn but invalid length will return False
+        Verifies that Amex with valid prefix (37) and valid Luhn but length too large will return False
         """
         self.assertFalse(credit_card_validator("3778924562000260"))   
+
+    def test17(self):
+        """
+        Verifies that Amex with valid prefix (37) and valid Luhn but invalid length to small will return False
+        """
+        self.assertFalse(credit_card_validator("3418"))  
     
     ## Testing out of bound
     # VISA 3, 5 
 
-    def test17(self):
+    def testxxx(self):
         """
         Out of bound prefix by 1 for VISA with correct length and luhn
         """
