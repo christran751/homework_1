@@ -81,11 +81,11 @@ class CreditCardValidatorTest(unittest.TestCase):
     def test10_1(self):
         """
         Verifies that a MasterCard with a valid prefix (2221 - 2720) 
-        valid inlength,
-        but invalud Luhn checksum
+        valid Luhn checksum,
+        but invalid length
         returns False.
         """
-        self.assertFalse(credit_card_validator("22345267691091382"))    
+        self.assertFalse(credit_card_validator("22345267691091303"))    
     
     def test11(self):
         """
