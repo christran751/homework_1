@@ -70,17 +70,25 @@ class CreditCardValidatorTest(unittest.TestCase):
 
     def test10(self):
         """
-        Verifies if card that does not match any prefix, but with a correct Luhn, and a correct length that matches the requirment of a AMEX return False.
+        Verifies if card that does not match any known prefix, but with a correct Luhn, and a correct length that matches the requirment of a AMEX return False.
 
         """
-        self.assertFalse(credit_card_validator("1234562789101115")) 
+        self.assertFalse(credit_card_validator("123456789101116")) 
 
     def test11(self):
         """
-        Verifies if card that does not match any prefix, but with a correct Luhn, and a correct length that matches the requirment of a AMEX return False.
+        Verifies if Master Card with valid prefix (2221 through 2720) and a correct Luhn but an incorrect length  return False.
 
         """
         self.assertFalse(credit_card_validator("223456789101115")) 
+    
+    def test12(self):
+        """
+        Verifies if Master Card with valid prefix (2221 through 2720) and a correct length but an incorrect Luhn  return False.
+
+        """
+        self.assertFalse(credit_card_validator("1234567891011153")) 
+
 
 # class CreditCardValidatorTest(unittest.TestCase):
     
