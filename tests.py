@@ -118,9 +118,9 @@ class CreditCardValidatorTest(unittest.TestCase):
     
     def test17(self):
         """
-        Verifies that Visa with invalid prefix (out of bound) and invalid length but valid Luhn will return False
+        Verifies that Visa with invalid prefix (out of bound) but valid length and valid Luhn will return False
         """
-        self.assertFalse(credit_card_validator("3778924562000260"))
+        self.assertFalse(credit_card_validator("5123456789890022")) # 3778924562000260
 
     # def test18(self):
     #     """
