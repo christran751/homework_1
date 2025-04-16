@@ -39,19 +39,17 @@ class CreditCardValidatorTest(unittest.TestCase):
     
     def test6(self):
         """
-        Since VISA was incorrect even though, it is actually valid, test out of bound
-        Test boundary 3
-        With correct length and Luhn
+        Since VISA was incorrect even though, it is actually valid, test invalid length
+        With correct LLuhn uhnngth and prefix
         """
-        self.assertTrue(credit_card_validator("3045645279873445")) 
+        self.assertTrue(credit_card_validator("423456278930")) 
 
     def test7(self):
         """
-        Since VISA was incorrect even though, it is actually valid, test out of bound
-        Test boundary 5
-        With correct length and Luhn
+        Verifies if Visa with valid prefix and correct length but incorrect Luhn will pass
+ 
         """
-        self.assertTrue(credit_card_validator("5000420789351250")) 
+        self.assertTrue(credit_card_validator("4000420789351254")) 
 
 
 
