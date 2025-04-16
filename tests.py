@@ -128,7 +128,7 @@ class CreditCardValidatorTest(unittest.TestCase):
         """
         Verifies if an Amex card that has an invalid prefix that is just below the range by 1 (of 34), but a valid Luhn, and a valid length will return False.
         """
-        self.assertFalse(credit_card_validator("330744106849387")) 
+        self.assertFalse(credit_card_validator("330000985354256")) #330744106849387
     
     def test9_1(self):
         """
@@ -152,7 +152,13 @@ class CreditCardValidatorTest(unittest.TestCase):
         """
         Verifies if an Amex card that has an invalid prefix that is just above the range by 1 (of 37), but a valid Luhn, and a valid length will return False.
         """
-        self.assertTrue(credit_card_validator("384869385466366")) 
+        self.assertTrue(credit_card_validator("380000985354256")) #384869385466366
+
+    def test21321(self):
+        self.assertTrue(credit_card_validator("340000985354256"))
+
+    def test213213343(self):
+        self.assertTrue(credit_card_validator("370000006942069"))
 
 
         
