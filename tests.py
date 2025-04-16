@@ -95,6 +95,14 @@ class CreditCardValidatorTest(unittest.TestCase):
         """
         self.assertFalse(credit_card_validator("2234567891011153")) 
 
+    def test11_1(self):
+        """
+        Verifies that a MasterCard with a valid prefix (51 - 55) 
+        and a valid length, but invalid Luhn checksum
+        returns False.
+        """
+        self.assertFalse(credit_card_validator("5555555566622396")) 
+
     def test12(self):
         """
         Verifies if Master Card with valid prefix (51 through 55) and a valid length but an invalid Luhn return False.
