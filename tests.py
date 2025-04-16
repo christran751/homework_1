@@ -100,9 +100,9 @@ class CreditCardValidatorTest(unittest.TestCase):
     def test10_1(self):
         """
         Verifies that a Visa Card with a prefix just below VISA (3) with a
-        valid length, but with an invalid Luhn checksum, returns False.
+        valid length and Luhn checksum, returns False.
         """
-        self.assertFalse(credit_card_validator("3012837397919468"))    
+        self.assertFalse(credit_card_validator("3012837397919460"))    
 
 
     def test11(self):
