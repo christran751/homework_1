@@ -10,7 +10,7 @@ class CreditCardValidatorTest(unittest.TestCase):
     For Master, will pass as valid if it passes both prefix and check bit
     Or if it pass both length and prefix. So probrobly as long as at least two condition is met, then it passes as masters?  Must pass
     condition is the prefix
-
+    
     """
 
     #### Master Card ####
@@ -51,15 +51,14 @@ class CreditCardValidatorTest(unittest.TestCase):
     def test6(self):
             """
             Verifies if Master Cards with valid prefix (51-55) valid length and valid check bits passes .
-            Correct length and check bits but invalid prefix for masters
             """
-            self.assertFalse(credit_card_validator("1125135145695120"))  
+            self.assertFalse(credit_card_validator("5125135145695121"))  
         
     def test7(self):
             """
             Verifies if Master Card with invalid prefix (2-) but valid length and valid check bits will return False .
             """
-            self.assertFalse(credit_card_validator("2000951283138741"))  
+            self.assertTrue(credit_card_validator("5000951283138744"))  
         
     def test8(self):
             """
