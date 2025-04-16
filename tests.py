@@ -109,6 +109,32 @@ class CreditCardValidatorTest(unittest.TestCase):
         """
         self.assertFalse(credit_card_validator(""))
 
+    def test16(self):
+        """
+        Verifies that an empty stirng should return False
+        """
+        self.assertFalse(credit_card_validator(""))
+    
+    def test17(self):
+        """
+        Verifies that Amex with correct prefix (34) but incorrect length and incorrect Luhn will return False
+        """
+        self.assertFalse(credit_card_validator("346443146464446"))
+
+    
+    def test18(self):
+        """
+        Verifies that Amex with correct prefix (37) but incorrect length and incorrect Luhn will return False
+        """
+        self.assertFalse(credit_card_validator("379514596464233"))
+
+    def test19(self):
+        """
+        Verifies that a card with an incorrect prefix and an incorrect length and but correct Luhn will return False
+        """
+        self.assertFalse(credit_card_validator("1230"))
+
+
 
 # class CreditCardValidatorTest(unittest.TestCase):
     
