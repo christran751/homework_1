@@ -135,4 +135,11 @@ class CreditCardValidatorTest(unittest.TestCase):
         """
         self.assertFalse(credit_card_validator("1230"))
 
+        
+if __name__ == '__main__':
+    unittest.main()
+
+
+    
+    
 
