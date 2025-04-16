@@ -3,6 +3,13 @@ from credit_card_validator import credit_card_validator
 
 
 class CreditCardValidatorTest(unittest.TestCase):
+    
+
+    #####  Notes ######
+    """
+    Master does not care about length, 
+    
+    """
 
     #### Master Card ####
 
@@ -24,7 +31,7 @@ class CreditCardValidatorTest(unittest.TestCase):
             """
             Verifies if Master Cards with valid prefix (2221-2720) valid length and valid check bits passes .
             """
-            self.assertFalse(credit_card_validator("2221012122121213321231231224342432423426"))  
+            self.assertFalse(credit_card_validator("222101212212121332123123122434243242342"))  
             
     def test4(self):
             """
