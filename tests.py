@@ -38,9 +38,28 @@ class CreditCardValidatorTest(unittest.TestCase):
 
     def test3_3(self):
         """
-        Verifies if Master Card with invalid prefix just below Master Card but valid length and Luhn check sum return False
+        Verifies if Master Card with invalid prefix just below Master Card (prefix 51) but valid length and Luhn check sum return False
         """
         self.assertFalse(credit_card_validator("5030194965135217"))  
+
+    def test3_4(self):
+        """
+        Verifies if Master Card with invalid prefix just above Master Card (prefix 55) but valid length and Luhn check sum return False
+        """
+        self.assertFalse(credit_card_validator("5663258628437387"))   
+
+     def test3_5(self):
+        """
+        Verifies if Master Card with invalid prefix just below Master Card (2221) but valid length and Luhn check sum return False
+        """
+        self.assertFalse(credit_card_validator("2220198583203353"))    
+
+     def test3_6(self):
+        """
+        Verifies if Master Card with invalid prefix just above Master Card (2720) but valid length and Luhn check sum return False
+        """
+        self.assertFalse(credit_card_validator("2721803172119548"))     
+
 
     def test4(self):
         """
@@ -59,14 +78,14 @@ class CreditCardValidatorTest(unittest.TestCase):
         """
         Verifies if Visa with valid prefix and valid Luhn but a length too short will return False.
         """
-        self.assertFalse(credit_card_validator("423456278930")) 
+        self.assertFalse(credit_card_validator("403738950985711")) # 15 characters
 
     def test7(self):
         """
         Verifies if Visa with valid prefix and valid Luhn but a length too long will return False.
 
         """
-        self.assertFalse(credit_card_validator("400042078935125489282528")) 
+        self.assertFalse(credit_card_validator("40004207893512544")) # 17 characters
 
 
     def test8_1(self):
