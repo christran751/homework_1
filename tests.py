@@ -85,7 +85,7 @@ class CreditCardValidatorTest(unittest.TestCase):
         but invalud Luhn checksum
         returns False.
         """
-        self.assertFalse(credit_card_validator("22345267769101138"))    
+        self.assertFalse(credit_card_validator("2234526769109138"))    
     
     def test11(self):
         """
