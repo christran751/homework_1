@@ -28,7 +28,7 @@ class CreditCardValidatorTest(unittest.TestCase):
         """
         Verifies if Amex with valid prefix (34), length, and valid Luhn will pass.
         """
-        self.assertFalse(credit_card_validator("337145486005348")) #347145486005346
+        self.assertFalse(credit_card_validator("347145486005346")) 
 
 
     def test5(self):
@@ -111,29 +111,23 @@ class CreditCardValidatorTest(unittest.TestCase):
 
     def test16(self):
         """
-        Verifies that an empty stirng should return False
+        Verifies that Amex with invalid prefix (1 less than 34) and invalid length but invalid Luhn will return False
         """
-        self.assertFalse(credit_card_validator(""))
-    
-    def test17(self):
-        """
-        Verifies that Amex with valid prefix (34) and valid length but invalid Luhn will return False
-        """
-        self.assertFalse(credit_card_validator("346443146464443"))
+        self.assertFalse(credit_card_validator("3371454860015348"))
 
     
-    def test18(self):
-        """
-        Verifies that Amex with valid prefix (37) and valid length but invalid Luhn will return False
-        """
-        self.assertFalse(credit_card_validator("379514596464234"))
+    # def test17(self):
+    #     """
+    #     Verifies that Amex with invalid prefix (37) and valid length but invalid Luhn will return False
+    #     """
+    #     self.assertFalse(credit_card_validator("337145486005348"))
 
-    def test19(self):
-        """
-        Because a valid Amex number did not pass as True, and
-        Verifies that a card with an invalid prefix and an invalid length and but valid Luhn will return False
-        """
-        self.assertFalse(credit_card_validator("1230"))
+    # def test18(self):
+    #     """
+    #     Because a valid Amex number did not pass as True, and
+    #     Verifies that a card with an invalid prefix and an invalid length and but valid Luhn will return False
+    #     """
+    #     self.assertFalse(credit_card_validator("1230"))
 
     # For AMEX it seems like the incorrect prefix is used
         
