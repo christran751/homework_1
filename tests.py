@@ -53,9 +53,9 @@ class CreditCardValidatorTest(unittest.TestCase):
 
     def test8_1(self):
         """
-        Verifies that Visa with invalid prefix (prefix of 4 - boundary issue) and valid luhn and but invalid length will return False
+        Verifies that Visa with invalid prefix (prefix of 4 - boundary issue) and valid length and but invalid Luhn will return False
         """
-        self.assertFalse(credit_card_validator("500002131698244")) 
+        self.assertFalse(credit_card_validator("5000021316982466")) 
 
 
 
