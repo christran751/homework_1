@@ -58,7 +58,7 @@ class CreditCardValidatorTest(unittest.TestCase):
             """
             Verifies if Master Card with invalid prefix (2-) but valid length and valid check bits will return False .
             """
-            self.assertTrue(credit_card_validator("6900951283138743"))  
+            self.assertFalse(credit_card_validator("6900951283138743"))  
         
     def test8(self):
             """
