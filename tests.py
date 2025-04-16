@@ -40,9 +40,9 @@ class CreditCardValidatorTest(unittest.TestCase):
     def test6(self):
         """
         Since VISA was incorrect even though, it is actually valid, test invalid length
-        With correct LLuhn uhnngth and prefix
+        With correct LLuhn and and prefix
         """
-        self.assertTrue(credit_card_validator("423456278930")) 
+        self.assertFalse(credit_card_validator("423456278930")) 
 
     def test7(self):
         """
