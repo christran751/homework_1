@@ -101,7 +101,7 @@ class CreditCardValidatorTest(unittest.TestCase):
         and a valid length, but invalid Luhn checksum
         returns False.
         """
-        self.assertFalse(credit_card_validator("5555555566622396")) 
+        self.assertFalse(credit_card_validator("5555555566622393")) 
 
     def test12(self):
         """
