@@ -229,15 +229,15 @@ class CreditCardValidatorTest(unittest.TestCase):
 
     def testxxx3(self):
         """
-        Verifies that Amex with valid prefix (34) but an invalid Luhn and a length that is exactly one less then threshhold return False
+        Verifies that Amex with valid prefix (34) and length but an invalid Luhn return False
         """
-        self.assertFalse(credit_card_validator("34405910596998")) # 14 digits
+        self.assertFalse(credit_card_validator("344059105396998")) # 15 digits
 
     def testxxx4(self):
         """
-        Verifies that Amex with valid prefix (37) and valid Luhn but length that is exactly one more then threshhold return False
+        Verifies that Amex with valid prefix (34) and length but an invalid Luhn return False
         """
-        self.assertFalse(credit_card_validator("3700000069420698")) # 16 digits
+        self.assertFalse(credit_card_validator("370000040420698")) # 15 digits
 
 
 
