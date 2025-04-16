@@ -98,10 +98,10 @@ class CreditCardValidatorTest(unittest.TestCase):
 
     def test14(self):
         """
-        Verifies if Master Card with an out of bound prefix (above 2720 by 1) but a correct Luhn and correct length return False.
+        Verifies if Master Card with an out of bound prefix (below 2221 by 1) but a correct Luhn and correct length return False.
 
         """
-        self.assertTrue(credit_card_validator("2721009485654425")) 
+        self.assertTrue(credit_card_validator("2221892825271405")) 
 
 
 # class CreditCardValidatorTest(unittest.TestCase):
