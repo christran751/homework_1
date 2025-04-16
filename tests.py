@@ -9,7 +9,7 @@ class CreditCardValidatorTest(unittest.TestCase):
         Verifies if Visa Cards with valid prefix, length, and valid Luhn will pass.
         This should!
         """
-        self.assertFalse(credit_card_validator("4234562789345674"))   
+        self.assertTrue(credit_card_validator("4234562789345674"))   
     
     def test2(self):
         """
@@ -39,13 +39,13 @@ class CreditCardValidatorTest(unittest.TestCase):
     
     def test6(self):
         """
-        Verifies if Visa with valid prefix and valid Luhn but a length too short.
+        Verifies if Visa with valid prefix and valid Luhn but a length too short will return False.
         """
         self.assertFalse(credit_card_validator("423456278930")) 
 
     def test7(self):
         """
-        Verifies if Visa with valid prefix and valid Luhn but a length too long.
+        Verifies if Visa with valid prefix and valid Luhn but a length too long will return False.
 
         """
         self.assertFalse(credit_card_validator("400042078935125489282528")) 
@@ -140,7 +140,6 @@ class CreditCardValidatorTest(unittest.TestCase):
         """
         self.assertFalse(credit_card_validator("3400009853542562"))  
     
-    # Seems like the valid length of AMEX is incorrectly set to be 16 instead.
     
     ## Testing out of bound
     # VISA 3, 5 
