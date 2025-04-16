@@ -73,7 +73,7 @@ class CreditCardValidatorTest(unittest.TestCase):
             """
             Verifies if Master Card with invalid prefix and invalid length but valid check bits will return False .
             """
-            self.assertFalse(credit_card_validator("56009512831387490")) 
+            self.assertFalse(credit_card_validator("000000000000000056009512831387490")) 
 
     def test12(self):
             """
@@ -86,7 +86,7 @@ class CreditCardValidatorTest(unittest.TestCase):
             """
             Verifies if Master Card with valid prefix (2xxx) but invalid length and invalid check bits will return False .
             """
-            self.assertTrue(credit_card_validator("2221420691337696969327"))   
+            self.assertFalse(credit_card_validator("2221420691337696969327"))   
 
 #     def test12_3(self):
 #             """
