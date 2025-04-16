@@ -64,18 +64,17 @@ class CreditCardValidatorTest(unittest.TestCase):
 
     def test9(self):
         """
-        Verifies if card that does not match any prefix, but with a valid Luhn, and a valid length that matches the requirment of a VISA and/or Mastercard return False.
-
+        Verifies if card that does not match any prefix, but with a valid Luhn, and a valid length that matches the requirment of a valid AMEX return False.
         """
         self.assertFalse(credit_card_validator("123456789101116")) 
     
 
     def test10(self):
         """
-        Verifies if Master Card with valid prefix (2221 through 2720) and a valid Luhn but an invalid length  return False.
+        Verifies if Master Card with valid prefix (2221 through 2720) and a valid Luhn but a length too short return False.
 
         """
-        self.assertFalse(credit_card_validator("223456789101115")) 
+        self.assertFalse(credit_card_validator("2234567891018")) #223456789101115 
     
     def test11(self):
         """
@@ -93,7 +92,7 @@ class CreditCardValidatorTest(unittest.TestCase):
 
     def test13(self):
         """
-        Verifies if Master Card with valid prefix (51 through 55) and a valid Luhn but an invalid length return False.
+        Verifies if Master Card with valid prefix (51 through 55) and a valid Luhn but a length to long return False.
 
         """
         self.assertFalse(credit_card_validator("55714548600500689")) 
@@ -121,6 +120,8 @@ class CreditCardValidatorTest(unittest.TestCase):
         Verifies that Amex with valid prefix (34) and valid Luhn but a length that is exactly one more the threshhold return False
         """
         self.assertFalse(credit_card_validator("3400009853542562"))  
+    
+    # Seems like the valid length of AMEX is incorrectly set to be 16 instead.
     
     ## Testing out of bound
     # VISA 3, 5 
