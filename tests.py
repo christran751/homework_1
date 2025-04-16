@@ -52,9 +52,17 @@ class CreditCardValidatorTest(unittest.TestCase):
 
     def test8(self):
         """
-        Verifies that Visa with invalid prefix (below prefix of 4) but valid length and valid Luhn will return False
+        Verifies that Visa with invalid prefix (below prefix of 4 - boundary issue) but valid length and valid Luhn will return False
         """
-        self.assertFalse(credit_card_validator("5999999923332097")) #3778924562000260
+        self.assertFalse(credit_card_validator("3778924562000260")) 
+
+    def test8.1(self):
+        """
+        Verifies that Visa with invalid prefix (below prefix of 4 - boundary issue) and valid length but invalid Luhn will return False
+        """
+        self.assertFalse(credit_card_validator("3778924562000265")) 
+
+
 
     # So for VISA, it seems like the mistake here is that they only consider 2 check to be valid i.e., if prefix and length and/or Luhn pass then it's
     # a valid VISA; and the length cannot be equal to 16 (which is invalid)
