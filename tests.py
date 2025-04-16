@@ -116,11 +116,11 @@ class CreditCardValidatorTest(unittest.TestCase):
         self.assertFalse(credit_card_validator("337145486001537"))
 
     
-    # def test17(self):
-    #     """
-    #     Verifies that Amex with invalid prefix (37) and valid length but invalid Luhn will return False
-    #     """
-    #     self.assertFalse(credit_card_validator("337145486005348"))
+    def test17(self):
+        """
+        Verifies that Amex with invalid prefix (1 more than 37) and valid length but invalid Luhn will return False
+        """
+        self.assertFalse(credit_card_validator("387896456305865"))
 
     # def test18(self):
     #     """
@@ -129,7 +129,7 @@ class CreditCardValidatorTest(unittest.TestCase):
     #     """
     #     self.assertFalse(credit_card_validator("1230"))
 
-    # For AMEX it seems like the incorrect prefix is used
+    # For AMEX it seems like the incorrect prefix is used and only requirment for something to be ammex is it matches the length
         
 if __name__ == '__main__':
     unittest.main()
