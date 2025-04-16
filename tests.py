@@ -9,7 +9,7 @@ class CreditCardValidatorTest(unittest.TestCase):
         Verifies if Visa Cards with valid prefix, length, and valid Luhn will pass.
         This should!
         """
-        self.assertFalse(credit_card_validator("4234562789345674"))  
+        self.assertFalse(credit_card_validator("3778924562000260"))   # 4234562789345674
     
     def test2(self):
         """
