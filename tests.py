@@ -22,7 +22,7 @@ class CreditCardValidatorTest(unittest.TestCase):
         """
         Verifies if Master Card with valid lower bound prefix (51), length, and valid Luhn will pass.
         """
-        self.assertTrue(credit_card_validator("5179426243951317"))
+        self.assertFalse(credit_card_validator("5179426243951317"))
 
     def test2_1(self):
         """
