@@ -226,6 +226,13 @@ class CreditCardValidatorTest(unittest.TestCase):
 
     def testVISAOMGPLEASEWORK12(self):
         self.assertFalse(credit_card_validator("40004207893512544"))
+    
+
+    def testmaster(self):
+        self.assertFalse(credit_card_validator("2221000133742063"))
+
+    def testmaster2(self):
+        self.assertFalse(credit_card_validator("2720892825213379"))
 
     def testxxx(self):
         """
