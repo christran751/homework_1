@@ -276,9 +276,9 @@ class CreditCardValidatorTest(unittest.TestCase):
 
     def test21132131(self):
         """
-        Check to see if leading 0.
+        Check to see if length too long.
         """
-        self.assertFalse(credit_card_validator("0403738950985711"))
+        self.assertFalse(credit_card_validator("4234567890123456789"))
     
     
 
