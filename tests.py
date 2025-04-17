@@ -183,15 +183,15 @@ class CreditCardValidatorTest(unittest.TestCase):
     
     def testExact(self):
         """
-        Wrong prefix by 1 Length too short by onebut invalid Luhn check sum
+        Wrong prefix by 1 Length too short by onebut and Luhn check sum
         """
-        self.assertFalse(credit_card_validator("500012312134357")) # 15 characters 
+        self.assertFalse(credit_card_validator("500012312134356")) # 15 characters 
 
     def testExact1(self):
         """
         Length too big by onebut invalid Luhn check sum
         """
-        self.assertFalse(credit_card_validator("30001233121343513")) # 17 characters 
+        self.assertFalse(credit_card_validator("30001233121343514")) # 17 characters 
 
 
 
