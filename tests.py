@@ -1,7 +1,7 @@
 import unittest
 from credit_card_validator import credit_card_validator
 
-# Issue with VISA - LEN != 16; but prefix always have to be 4 and Luhn must always be checked
+# Issue with VISA - LEN != 16; but prefix always have to be 4. Luhn does not have to be correct if both len and prefix match
 
 class CreditCardValidatorTest(unittest.TestCase):
 
@@ -183,15 +183,15 @@ class CreditCardValidatorTest(unittest.TestCase):
     
     def testExact(self):
         """
-        Length too short by onebut invalid Luhn check sum
+        Wrong prefix by 1 Length too short by onebut invalid Luhn check sum
         """
-        self.assertFalse(credit_card_validator("400012312134357")) # 15 characters 
+        self.assertFalse(credit_card_validator("500012312134357")) # 15 characters 
 
     def testExact1(self):
         """
         Length too big by onebut invalid Luhn check sum
         """
-        self.assertFalse(credit_card_validator("40001233121343513")) # 17 characters 
+        self.assertFalse(credit_card_validator("30001233121343513")) # 17 characters 
 
 
 
