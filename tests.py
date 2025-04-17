@@ -164,9 +164,7 @@ class CreditCardValidatorTest(unittest.TestCase):
         """
         self.assertFalse(credit_card_validator("5000001234567896")) # False is False    
 
-    # prefix matters. can't be anything else, maybe length cannot be 16 
-
-    # test exact length for VISA
+    # prefix matters. can't be anything else, maybe had length != 16 for VISA
 
         
     def test61(self):
@@ -186,7 +184,7 @@ class CreditCardValidatorTest(unittest.TestCase):
         """
         Exact Length but invalid Luhn check sum
         """
-        self.assertTrue(credit_card_validator("4000000000000052")) # 16 characters 
+        self.assertTrue(credit_card_validator("42")) # 2 characters 
 
 
     def test11(self):
