@@ -103,13 +103,13 @@ class CreditCardValidatorTest(unittest.TestCase):
     
     def test6(self):
         """
-        Verifies if Visa with valid prefix and valid Luhn but a length too short will return False.
+        Verifies if Visa with valid prefix and valid Luhn but a length just short by one will return False.
         """
         self.assertFalse(credit_card_validator("403738950985711")) # 15 characters True is not false
 
     def test7(self):
         """
-        Verifies if Visa with valid prefix and valid Luhn but a length too long will return False.
+        Verifies if Visa with valid prefix and valid Luhn but a length that is just to long by one will return False.
 
         """
         self.assertFalse(credit_card_validator("40004207893512544")) # 17 characters True is not false
@@ -155,14 +155,38 @@ class CreditCardValidatorTest(unittest.TestCase):
         Verifies that a Visa Card with a prefix just below VISA (3) with a
         valid length and Luhn checksum, returns False.
         """
-        self.assertFalse(credit_card_validator("3012837397919460")) # False is False so prefix matters   
+        self.assertFalse(credit_card_validator("3012837397919460")) # False is False 
     
     def test10_1(self):
         """
         Verifies that a VISA Card with a prefix just above VISA (5) with a
         valid length and Luhn checksum, returns False.
         """
-        self.assertTrue(credit_card_validator("5000001234567896")) # False is False so prefix matters   
+        self.assertFalse(credit_card_validator("5000001234567896")) # False is False    
+
+    # prefix matters. can't be anything else, maybe length cannot be 16 
+
+    # test exact length for VISA
+
+        
+    def test61(self):
+        """
+        Verifies if Visa with valid prefix and valid Luhn but a length that is too short return False.
+        """
+        self.assertFalse(credit_card_validator("40373895098534")) # 14 characters 
+
+    def test71(self):
+        """
+        Verifies if Visa with valid prefix and valid Luhn but a length that is too long will return False.
+
+        """
+        self.assertFalse(credit_card_validator("400000000000001273")) # 18 characters 
+    
+    def testExact(self):
+        """
+        Exact Length but invalid Luhn check sum
+        """
+        self.assertFalse(credit_card_validator("4000000000000052")) # 16 characters 
 
 
     def test11(self):
