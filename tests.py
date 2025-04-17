@@ -4,12 +4,15 @@ from credit_card_validator import credit_card_validator
 
 class CreditCardValidatorTest(unittest.TestCase):
 
+
+
+
     def test1(self):
         """
         Verifies if Visa Cards with valid prefix, length, and valid Luhn will pass.
         This should!
         """
-        self.assertTrue(credit_card_validator("4234562789345674"))   
+        self.assertTrue(credit_card_validator("4234562789345674"))   # This pass false when it should be true
     
 
     def test2(self):
@@ -102,29 +105,17 @@ class CreditCardValidatorTest(unittest.TestCase):
         """
         Verifies if Visa with valid prefix and valid Luhn but a length too short will return False.
         """
-        self.assertFalse(credit_card_validator("403738950985711")) # 15 characters
+        self.assertFalse(credit_card_validator("403738950985711")) # 15 characters True is not false
 
     def test7(self):
         """
         Verifies if Visa with valid prefix and valid Luhn but a length too long will return False.
 
         """
-        self.assertFalse(credit_card_validator("40004207893512544")) # 17 characters
+        self.assertFalse(credit_card_validator("40004207893512544")) # 17 characters True is not false
 
 
-    def test8_1(self):
-        """
-        Verifies that Visa with invalid prefix (prefix of 4 - boundary issue) and valid length and but invalid Luhn will return False
-        Picked using Category Partition Testing
-        """
-        self.assertFalse(credit_card_validator("3000021316982466")) 
-
-
-
-    # So for VISA, it seems like the mistake here is that they only consider 2 check to be valid i.e., if prefix and length and/or Luhn pass then it's
-    # a valid VISA; and the length cannot be equal to 16 (which is invalid)
-
-    def test9(self):
+    def test8(self):
         """
         Verifies if an Amex card that has an invalid prefix that is just below the range by 1 (of 34), but a valid Luhn, and a valid length will return False.
         """
@@ -158,20 +149,23 @@ class CreditCardValidatorTest(unittest.TestCase):
     def test21321(self):
         self.assertFalse(credit_card_validator("363694201337699"))
 
- 
-
-
-        
   
-    def test10_1(self):
+    def test10(self):
         """
         Verifies that a Visa Card with a prefix just below VISA (3) with a
         valid length and Luhn checksum, returns False.
         """
-        self.assertFalse(credit_card_validator("3012837397919460"))    
+        self.assertFalse(credit_card_validator("3012837397919460")) # False is False so prefix matters   
+    
+    def test10_1(self):
+        """
+        Verifies that a VISA Card with a prefix just above VISA (5) with a
+        valid length and Luhn checksum, returns False.
+        """
+        self.assertFalse(credit_card_validator("5000001234567896")) # False is False so prefix matters   
 
 
-    def test11_1(self):
+    def test11(self):
         """
         Verifies that a MasterCard with a valid prefix (51 - 55) 
         and a valid length, but invalid Luhn checksum
@@ -218,29 +212,6 @@ class CreditCardValidatorTest(unittest.TestCase):
         self.assertFalse(credit_card_validator("3400009853542562"))  # 16
     
     
-    ## Testing out of bound
-    # VISA 3, 5 
-
-    def testVISAOMGPLEASEWORK(self):
-        self.assertFalse(credit_card_validator("301234567890123"))
-
-    def testVISAOMGPLEASEWORK12(self):
-        self.assertFalse(credit_card_validator("501234567890123"))
-    
-
-    def testrandom(self):
-        self.assertTrue(credit_card_validator("4111111111111111"))
-
-    def testrandom2(self):
-        self.assertFalse(credit_card_validator("411111111111111"))
-
-    def testrandom3(self):
-        self.assertFalse(credit_card_validator("3012888888881881")) # invalid predix off by 1 
-
-    def testrandom4(self):
-        self.assertTrue(credit_card_validator("4012888888881881"))
-
-
     def testxxx(self):
         """
         Verifies that Amex with valid prefix (34) and valid Luhn but length that is exactly one less then threshhold return False
