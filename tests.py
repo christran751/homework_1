@@ -290,10 +290,10 @@ class CreditCardValidatorTest(unittest.TestCase):
     def test37(self):
         """
         Based off of test36 triggering a bug but not test32,
-        verifying that a Amex with a invalid prefix (37) with length of 17, and a valid Luhn checksum
+        verifying that a Master Card with a invalid prefix (2799) with length of 17, and a valid Luhn checksum
         will return False
         """
-        self.assertFalse(credit_card_validator("37123456789353255"))
+        self.assertFalse(credit_card_validator("27993456789353253"))
     
     
     # def test8(self):
