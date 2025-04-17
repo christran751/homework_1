@@ -48,6 +48,12 @@ class CreditCardValidatorTest(unittest.TestCase):
         """
         self.assertFalse(credit_card_validator("5030194965135217"))  
 
+   def test3_12121(self):
+        """
+        Verifies if Master Card with invalid prefix just below Master Card (prefix 51) and invalid length and Luhn check sum return False
+        """
+        self.assertFalse(credit_card_validator("50301949651352170"))  
+
     def test3_4(self):
         """
         Verifies if Master Card with invalid prefix just above Master Card (prefix 55) but valid length and Luhn check sum return False
@@ -79,6 +85,12 @@ class CreditCardValidatorTest(unittest.TestCase):
         Verifies if Master Card with valid prefix and invalid Luhn but valid length check sum return False
         """           
         self.assertFalse(credit_card_validator("2221000000123447")) # 16
+
+    def mastertest12delete(self):
+        """
+        Master Card with only correct prefix
+        """
+        self.assertFalse(credit_card_validator("222100012354523")) # 16
 
     def test3_7(self):
         """
@@ -212,7 +224,7 @@ class CreditCardValidatorTest(unittest.TestCase):
         Verifies if Master Card with valid prefix (51 through 55) and a valid Luhn but a length to long return False.
 
         """
-        self.assertFalse(credit_card_validator("5571454860052")) # lets try length < 14 55714548600500689
+        self.assertFalse(credit_card_validator("55714548600500689")) 
     
     def test14(self):
         """
@@ -271,13 +283,13 @@ class CreditCardValidatorTest(unittest.TestCase):
     
     def test999(self):
         """
-        Verifies that a MasterCard with an invalid prefix (50) will return False.
+        Verifies that a MasterCard with an invalid prefix (50), ssasaasaasaawill return False.
         """
         self.assertFalse(credit_card_validator("5000000000000000"))
 
     def test9919(self):
         """
-        Verifies that a MasterCard with an invalid prefix (2721) will return False.
+        Verifies that a MasterCard with an invalid prefix (2721) but valid length (16) but invalid check sum will return False.
         """
         self.assertFalse(credit_card_validator("2721000000000000"))
 
