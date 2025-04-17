@@ -121,6 +121,13 @@ class CreditCardValidatorTest(unittest.TestCase):
         """
         self.assertFalse(credit_card_validator("40373895098535")) 
 
+    def test16(self):
+        """
+        Verifies if Visa with invalid prefix (3), invalid Luhn checksum, and 
+        an invalid length (14) return False.
+        """
+        self.assertFalse(credit_card_validator("30002136979263")) 
+
     
     # So any length that's not =16 works
 
