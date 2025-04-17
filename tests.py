@@ -235,7 +235,7 @@ class CreditCardValidatorTest(unittest.TestCase):
         self.assertFalse(credit_card_validator("411111111111111"))
 
     def testrandom3(self):
-        self.assertFalse(credit_card_validator("41111111111111111"))
+        self.assertFalse(credit_card_validator("3012888888881881")) # invalid predix off by 1 
 
     def testrandom4(self):
         self.assertTrue(credit_card_validator("4012888888881881"))
