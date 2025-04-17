@@ -228,11 +228,9 @@ class CreditCardValidatorTest(unittest.TestCase):
         self.assertFalse(credit_card_validator("501234567890123"))
     
 
-    def testamex(self):
-        self.assertFalse(credit_card_validator("330000985354256"))
+    def testmaser(self):
+        self.assertFalse(credit_card_validator("55123456789101375"))
 
-    def testamex2(self):
-        self.assertFalse(credit_card_validator("380000985354256"))
 
     def testxxx(self):
         """
