@@ -53,18 +53,18 @@ class CreditCardValidatorTest(unittest.TestCase):
         """
         self.assertTrue(credit_card_validator("347145486005346"))
     
-    
     def test8(self):
         """
-        Verifies if Visa with valid prefix (4) and valid Luhn checksum but a invalid length 
-        just short by one (15) will return False.
+        Verifies if Visa with valid prefix (4) and valid Luhn checksum 
+        but an invalid length just short by one (15) 
+        will return False.
         """
         self.assertFalse(credit_card_validator("403738950985711")) 
         # return True so length of 15 pass
 
     def test9(self):
         """
-        Verifies if Visa with valid prefix (4) and valid Luhn checksum but a invalid length 
+        Verifies if Visa with valid prefix (4) and valid Luhn checksum but an invalid length 
         (one more than 16 digits) will return False.
         """
         self.assertFalse(credit_card_validator("40004207893512544")) 
@@ -101,27 +101,26 @@ class CreditCardValidatorTest(unittest.TestCase):
         valid length (16), but an invalid Luhn checksum returns False.
         """
         self.assertFalse(credit_card_validator("3012837397919712"))  
+        # return false. therefore, length is the issue here
 
     # My guess is that prefix matters. can't be anything else, maybe had length != 16 for VISA
     # further testing . . . 
 
-        
     def test14(self):
         """
         Verifies if Visa with valid prefix (4) and valid Luhn checksum
         but a length that is too short (14 instead of 16) return False.
         """
         self.assertFalse(credit_card_validator("40373895098534")) 
-        # returns true???
-
+        # returns true
+    
     def test15(self):
         """
-        Verifies if Visa with valid prefix (4) and valid Luhn checksum 
-        but a length that is too long (18) will return False.
-
+        Verifies if Visa with valid prefix (4) but an invalid Luhn checksum
+        and an invalid length (14) return False.
         """
-        self.assertFalse(credit_card_validator("400000000000001273"))  
-        # return true
+        self.assertFalse(credit_card_validator("40373895098535")) 
+
     
     # So any length that's not =16 works
 
