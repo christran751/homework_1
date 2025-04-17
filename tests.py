@@ -222,17 +222,17 @@ class CreditCardValidatorTest(unittest.TestCase):
     # VISA 3, 5 
 
     def testVISAOMGPLEASEWORK(self):
-        self.assertFalse(credit_card_validator("403738950985711"))
+        self.assertFalse(credit_card_validator("301234567890123"))
 
     def testVISAOMGPLEASEWORK12(self):
-        self.assertFalse(credit_card_validator("40004207893512544"))
+        self.assertFalse(credit_card_validator("501234567890123"))
     
 
-    def testmaster(self):
-        self.assertFalse(credit_card_validator("2220000000000000"))
+    def testamex(self):
+        self.assertFalse(credit_card_validator("330000985354256"))
 
-    def testmaster2(self):
-        self.assertFalse(credit_card_validator("2721000000000000"))
+    def testamex2(self):
+        self.assertFalse(credit_card_validator("380000985354256"))
 
     def testxxx(self):
         """
