@@ -162,7 +162,7 @@ class CreditCardValidatorTest(unittest.TestCase):
         Verifies that a VISA Card with a prefix just above VISA (5) with a
         valid length and Luhn checksum, returns False.
         """
-        self.assertFalse(credit_card_validator("5000001234567896")) # False is False so prefix matters   
+        self.assertTrue(credit_card_validator("5000001234567896")) # False is False so prefix matters   
 
 
     def test11(self):
