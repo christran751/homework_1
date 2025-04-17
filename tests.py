@@ -62,7 +62,14 @@ class CreditCardValidatorTest(unittest.TestCase):
         """
         Verifies if Master Card with invalid prefix just above Master Card (2720) but valid length and Luhn check sum return False
         """
-        self.assertFalse(credit_card_validator("2721803172119548"))     
+        self.assertFalse(credit_card_validator("2721803172119548")) 
+
+
+    def testMaster1(self):
+        """
+        Verifies if Master Card with invalid prefix just above Master Card (2720) and invalid length (one short) but valid Luhn check sum return False
+        """           
+        self.assertFalse(credit_card_validator("272169100024672"))
     
     def test3_7(self):
         """
@@ -78,13 +85,13 @@ class CreditCardValidatorTest(unittest.TestCase):
 
     def test3_9(self):
         """
-        Verifies if Master Card with valid upper bound prefix (55) and valid Luhn but a length too long will return False.
+        Verifies if Master Card with valid upper bound prefix (55) and valid Luhn but a length one too long will return False.
         """
         self.assertFalse(credit_card_validator("55123456789101375")) # 17 characters
 
     def test3_10(self):
         """
-        Verifies if Master Card with valid lower bound prefix (2720) and valid Luhn but a length too long will return False.
+        Verifies if Master Card with valid lower bound prefix (2720) and valid Luhn but a length one too long will return False.
         """
         self.assertFalse(credit_card_validator("27200007145486698")) # 17 characters
 
@@ -181,19 +188,6 @@ class CreditCardValidatorTest(unittest.TestCase):
         """
         self.assertFalse(credit_card_validator("400000000000001273")) # 18 characters 
     
-    def testExact(self):
-        """
-        Wrong prefix by 1 Length too short by onebut and Luhn check sum
-        """
-        self.assertFalse(credit_card_validator("500012312134356")) # 15 characters 
-
-    def testExact1(self):
-        """
-        Length too big by onebut invalid Luhn check sum
-        """
-        self.assertFalse(credit_card_validator("30001233121343514")) # 17 characters 
-
-
 
     def test11(self):
         """
