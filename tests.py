@@ -276,12 +276,13 @@ class CreditCardValidatorTest(unittest.TestCase):
     def test36(self):
         """
         Verifies that a MasterCard with a invalid prefix that is 
-        one above the upper bound (2721), with an invalid length (17), but a valid Luhn checksum
-        will return False.
+        one above the upper bound (2721), with an invalid length (16), but a 
+        valid Luhn checksum will return False.
 
-        Check to see if the upper bound of the new range (2221 - 2270) will differ from the upperbound of the old range (51 - 55)
+        Check to see if the upper bound of the new range (2221 - 2270) will 
+        differ from the upperbound of the old range (51 - 55)
         """
-        self.assertFalse(credit_card_validator("272112332113245010"))  # 27211233211324509
+        self.assertFalse(credit_card_validator("2721123321132452"))  #27211233211324509
     
     
     # def test8(self):
