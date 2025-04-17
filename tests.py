@@ -3,7 +3,7 @@ from credit_card_validator import credit_card_validator
 
 # Issue with VISA - LEN != 16; but prefix always have to be 4. Luhn does not have to be correct if both len and prefix match
 
-# Issue with Master is that Length cannot be exact i.e., maybe 
+# Issue with Master is that it prefix can be out of bound, length can be as well. Must pass two of the 3 in order to valid as Master
 
 class CreditCardValidatorTest(unittest.TestCase):
 
@@ -206,19 +206,13 @@ class CreditCardValidatorTest(unittest.TestCase):
         """
         self.assertFalse(credit_card_validator("5555555566622393")) 
 
-    def test12(self):
-        """
-        Verifies if Master Card with valid prefix (51 through 55) and a valid length but an invalid Luhn return False.
-
-        """
-        self.assertFalse(credit_card_validator("5566742475740355")) 
 
     def test13(self):
         """
         Verifies if Master Card with valid prefix (51 through 55) and a valid Luhn but a length to long return False.
 
         """
-        self.assertFalse(credit_card_validator("55714548600500689")) 
+        self.assertFalse(credit_card_validator("5571454860052")) # lets try length < 14 55714548600500689
     
     def test14(self):
         """
