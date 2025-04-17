@@ -281,6 +281,14 @@ class CreditCardValidatorTest(unittest.TestCase):
         """
         self.assertFalse(credit_card_validator("27211233211324509"))
     
+    def test37(self):
+        """
+        Verifies that a MasterCard with a invalid prefix that is one below the lower bound (2220), 
+        and invalid length (15), but has a valid Luhn checksum
+        will return False.
+        """
+        self.assertFalse(credit_card_validator("22201337569527"))
+    
 
 
     # def test8(self):
