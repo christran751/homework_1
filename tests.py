@@ -229,13 +229,13 @@ class CreditCardValidatorTest(unittest.TestCase):
     
 
     def testrandom(self):
-        self.assertFalse(credit_card_validator("4000000000000000"))
+        self.assertFalse(credit_card_validator("4556737586899855"))
 
     def testrandom2(self):
         self.assertFalse(credit_card_validator("4917300800000000"))
 
     def testrandom3(self):
-        self.assertFalse(credit_card_validator("4000001234567899"))
+        self.assertFalse(credit_card_validator("4916737498741342"))
 
 
     def testxxx(self):
