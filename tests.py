@@ -276,9 +276,9 @@ class CreditCardValidatorTest(unittest.TestCase):
 
     def test21132131(self):
         """
-        Verifies that None as input returns False.
+        Check to see if leading 0.
         """
-        self.assertFalse(credit_card_validator(None))
+        self.assertFalse(credit_card_validator("0403738950985711"))
     
     
 
