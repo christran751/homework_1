@@ -84,22 +84,23 @@ class CreditCardValidatorTest(unittest.TestCase):
         valid length (16) and Luhn checksum, returns False.
         """
         self.assertFalse(credit_card_validator("5000001234567896")) 
+        
 
     def test12(self):
         """
         Verifies that a Visa Card with a prefix just below VISA (3) with a
         valid Luhn checksum, but an invalid length (14) returns False.
         """
-        self.assertFalse(credit_card_validator("30128373979197"))  
+        self.assertFalse(credit_card_validator("30128373979197"))
+        # False as intended
        
     
     def test13(self):
         """
-        Verifies that a Visa Card with a prefix just below VISA (3) with a
+        Verifies that a Visa Card with a valid prefix (4) with a
         valid length (16), but an invalid Luhn checksum returns False.
         """
         self.assertFalse(credit_card_validator("3012837397919712"))  
-           
 
     # My guess is that prefix matters. can't be anything else, maybe had length != 16 for VISA
     # further testing . . . 
@@ -122,7 +123,7 @@ class CreditCardValidatorTest(unittest.TestCase):
         self.assertFalse(credit_card_validator("400000000000001273"))  
         # return true
     
-    # So anylength that's not =16 works
+    # So any length that's not =16 works
 
 
     ##############################
