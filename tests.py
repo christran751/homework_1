@@ -221,6 +221,12 @@ class CreditCardValidatorTest(unittest.TestCase):
     ## Testing out of bound
     # VISA 3, 5 
 
+    def testVISAOMGPLEASEWORK(self):
+        self.assertFalse(credit_card_validator("403738950985711"))
+
+    def testVISAOMGPLEASEWORK12(self):
+        self.assertFalse(credit_card_validator("40004207893512544"))
+
     def testxxx(self):
         """
         Verifies that Amex with valid prefix (34) and valid Luhn but length that is exactly one less then threshhold return False
