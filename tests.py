@@ -307,7 +307,7 @@ class CreditCardValidatorTest(unittest.TestCase):
     def test31(self):
         """
         Verifies if Master Card with valid upper bound prefix (55) and valid
-        Luhn but an invalid length (17) will return False.
+        Luhn checksum but an invalid length (17) will return False.
         Picked using both the Category Partition Testing Method
         and the boundary value testing method.
         """
@@ -316,7 +316,7 @@ class CreditCardValidatorTest(unittest.TestCase):
     def test32(self):
         """
         Verifies if Master Card with valid lower bound prefix (2720) and valid
-        Luhn but an invalid length (17) return False.
+        Luhn checksum but an invalid length (17) return False.
         Picked using both the Category Partition Testing Method
         and the boundary value testing method.
         """
