@@ -343,11 +343,11 @@ class CreditCardValidatorTest(unittest.TestCase):
     def test35(self):
         """
         Verifies that a MasterCard with a invalid prefix that is
-        one above the upper bound (2721), with an invalid length (16), but a
+        one above the upper bound (2721), with an invalid length (17), but a
         valid Luhn checksum will return False.
         Check to see if the upper bound of the new range (2221 - 2270) will
         differ from the upperbound of the old range (51 - 55)
-        2721 with length = 16 will fails
+        2721 with length = 16 will fail (as it should)
         But 2721 with length = 17 somehow passes
         Picked using both the Category Partition Testing Method,
         the boundary value testing method, and error guessing.
