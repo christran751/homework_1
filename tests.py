@@ -4,6 +4,9 @@ from credit_card_validator import credit_card_validator
 
 class CreditCardValidatorTest(unittest.TestCase):
     """
+    Author: Christopher Tran
+    Date: 04/18/2025
+
     Unit tests for the credit_card_validator function.
 
     Goal is to construct a series of unit tests to verify that the function
