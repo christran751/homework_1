@@ -401,7 +401,9 @@ class CreditCardValidatorTest(unittest.TestCase):
 
     def test41(self):
         """
-        Verifies that an empty stirng should return False
+        Verifies that an empty stirng should return False.
+        Picked using error guessing i.e., to see if the function
+        can accuratetly handle missing input.
         """
         self.assertFalse(credit_card_validator(""))
 
